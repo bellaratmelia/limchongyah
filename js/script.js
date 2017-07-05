@@ -32,7 +32,7 @@ $(".video-item a").click(function(event) {
 });
 
 //news iframe stuff
-$(".news-headline").click(function(event) {
+$(".news-headline-iframe").click(function(event) {
 	event.preventDefault();
 	
 	// grab the link from href
@@ -40,4 +40,15 @@ $(".news-headline").click(function(event) {
 	
 	//update iframe
 	$("#news-iframe").attr("src", iframe_link);
+});
+
+// news popup window stuff
+$(".news-headline-popup").click(function(event) {
+	event.preventDefault();
+	
+	//open link in new window
+	var NWin = window.open($(this).attr('href'), '', 'height=800,width=800');
+    if (window.focus){
+		NWin.focus();
+    }
 });
