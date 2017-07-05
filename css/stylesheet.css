@@ -161,6 +161,12 @@ a.submenu {
 	
 }
 
+#news-iframe {
+	width: 100%;
+	height: 80vh;
+	background-color: #fff;
+}
+
 @media (min-width: 426px) {
 	/* .content { */
 		/* padding: 100px; */
