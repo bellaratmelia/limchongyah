@@ -26,68 +26,86 @@
   </head>
   <body>
     <div class="background news">
-		<div class="container homepage-container">
-			<div class="row content">
-				<div class="col-md-8">
+		<div class="container news-container">
+			<div class="row content" style="margin-top: 4vh;">
+				<div class="col-md-9">
 					<iframe id="news-iframe" src="iframe-placeholder.html"></iframe>
 				</div>
-				<div class="col-md-4 text-right">
-					
-					<div class="panel-group" id="accordion">
-					  <div class="panel panel-default">
-						<div class="panel-heading">
-						  <h4 class="panel-title">
-							<a data-toggle="collapse" data-parent="#accordion" href="#collapse1">1990 - 2000</a>
-						  </h4>
-						</div>
-						<div id="collapse1" class="panel-collapse collapse in">
-							<div class="panel-body">
-								<ul>
-									<li><a class="news-headline-popup" href="https://eresources.nlb.gov.sg/newspapers/Digitised/Article/biztimes19850219-1.2.37.aspx"> Lim Chong Yah still at helm of wages council</a></li>
-								</ul>
-							</div>
-						</div>
-					  </div>
-					  <div class="panel panel-default">
-						<div class="panel-heading">
-						  <h4 class="panel-title">
-							<a data-toggle="collapse" data-parent="#accordion" href="#collapse2">2001 - 2010</a>
-						  </h4>
-						</div>
-						<div id="collapse2" class="panel-collapse collapse">
-							<div class="panel-body">
-								<ul>
-									<li><a class="news-headline-iframe" href="https://ezlibproxy1.ntu.edu.sg/login?url=https://global.factiva.com/en/du/article.asp?NAPC=S&AccessionNo=stbt000020010715dx23000tw&xsid=S001cFk3GV90HVyMTZyMTAoNDapOTItNXmm5DFHY96oYqZlNFFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB"> Chair launched at NUS in honour of Lim Chong Yah</a></li>
-								</ul>
-						  </div>
-						</div>
-					  </div>
-					  <div class="panel panel-default">
-						<div class="panel-heading">
-						  <h4 class="panel-title">
-							<a data-toggle="collapse" data-parent="#accordion" href="#collapse3">2011 - recent</a>
-						  </h4>
-						</div>
-						<div id="collapse3" class="panel-collapse collapse">
-						  <div class="panel-body">
-								<ul>
-									<li>News Headline 1</li>
-									<li>News Headline 2</li>
-									<li>News Headline 3</li>
-								</ul>
-						  </div>
-						</div>
-					  </div>
-					</div>
+				<div class="col-md-3 text-right">
 					
 					<ul class="main_menu">
-						<li><a href="index.html" class="home"><span class="glyphicon glyphicon-home" aria-hidden="true"></span></a></li>
+						<li><a href="main.html" class="home"><span class="glyphicon glyphicon-home" aria-hidden="true"></span></a></li>
 						<li><a href="academic.html">Academic</a></li>
 						<li><a href="bursaries.html">Bursaries and Scholarship</a></li>
 						<li><a href="economy-nationalwage.html">Economy</a></li>
 						<li><a href="personal.html">Personal</a></li>
 						<li><a href="news.html">In the News</a></li>
 					</ul>
+					
+					
+					<div class="panel-group" id="accordion">
+					  <div class="panel panel-info">
+						<div class="panel-heading">
+						  <h4 class="panel-title">
+							<a data-toggle="collapse" data-parent="#accordion" href="#collapse1">1960s - 1970s</a>
+						  </h4>
+						</div>
+						<div id="collapse1" class="panel-collapse collapse in">
+							<div class="panel-body">
+								<ul id="news-60s" class="newslist"></ul>
+							</div>
+						</div>
+					  </div>
+					  <div class="panel panel-info">
+						<div class="panel-heading">
+						  <h4 class="panel-title">
+							<a data-toggle="collapse" data-parent="#accordion" href="#collapse2">1980s</a>
+						  </h4>
+						</div>
+						<div id="collapse2" class="panel-collapse collapse">
+							<div class="panel-body">
+								<ul id="news-80s" class="newslist"></ul>
+						  </div>
+						</div>
+					  </div>
+					  <div class="panel panel-info">
+						<div class="panel-heading">
+						  <h4 class="panel-title">
+							<a data-toggle="collapse" data-parent="#accordion" href="#collapse3">1990s</a>
+						  </h4>
+						</div>
+						<div id="collapse3" class="panel-collapse collapse">
+						  <div class="panel-body">
+								<ul id="news-90s" class="newslist"></ul>
+						  </div>
+						</div>
+					  </div>
+					  <div class="panel panel-info">
+						<div class="panel-heading">
+						  <h4 class="panel-title">
+							<a data-toggle="collapse" data-parent="#accordion" href="#collapse4">2000s</a>
+						  </h4>
+						</div>
+						<div id="collapse4" class="panel-collapse collapse">
+						  <div class="panel-body">
+								<ul id="news-100s" class="newslist"></ul>
+						  </div>
+						</div>
+					  </div>
+					  <div class="panel panel-info">
+						<div class="panel-heading">
+						  <h4 class="panel-title">
+							<a data-toggle="collapse" data-parent="#accordion" href="#collapse5">2010s</a>
+						  </h4>
+						</div>
+						<div id="collapse5" class="panel-collapse collapse">
+						  <div class="panel-body">
+								<ul id="news-110s" class="newslist"></ul>
+						  </div>
+						</div>
+					  </div>
+					</div>
+					
 				</div>
 			</div>
 		</div>
@@ -97,7 +115,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-csv/0.8.3/jquery.csv.min.js"></script>
-    <script src="js/script.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-csv/0.8.3/jquery.csv.min.js"></script>
+	<script src="js/script.js"></script>
   </body>
 </html>
