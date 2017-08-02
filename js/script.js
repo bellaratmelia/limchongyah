@@ -52,3 +52,18 @@ $(".news-headline-popup").click(function(event) {
 		NWin.focus();
     }
 });
+
+// CSV handling 
+$.ajax({
+    url: "lcy_news.csv",
+    async: false,
+    success: function (csvd) {
+        var items = $.csv.toObjects(csvd);
+        var jsonobject = JSON.stringify(items);
+		alert(jsonobject);
+    },
+    dataType: "text",
+    complete: function () {
+        // call a function on complete 
+    }
+});
