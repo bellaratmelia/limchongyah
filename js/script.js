@@ -5,6 +5,8 @@ var $vid = $('<video src="" autoplay controls></video>');
 var video;
 var iframe_link;
 
+var items; // for CSV handling
+
 // Append the components to overlay, then append it to html body
 $overlay.append($vid);
 
@@ -31,39 +33,78 @@ $(".video-item a").click(function(event) {
 	$overlay.fadeIn();
 });
 
-//news iframe stuff
-$(".news-headline-iframe").click(function(event) {
-	event.preventDefault();
-	
-	// grab the link from href
-	iframe_link = $(this).attr("href");
-	
-	//update iframe
-	$("#news-iframe").attr("src", iframe_link);
-});
-
-// news popup window stuff
-$(".news-headline-popup").click(function(event) {
-	event.preventDefault();
-	
-	//open link in new window
-	var NWin = window.open($(this).attr('href'), '', 'height=800,width=800');
-    if (window.focus){
-		NWin.focus();
-    }
-});
-
 // CSV handling 
 $.ajax({
-    url: "lcy_news.csv",
-    async: false,
+    url: "https://cdn.rawgit.com/bellaratmelia/limchongyah/fa957241/lcy_news.csv",
+    async: true,
     success: function (csvd) {
-        var items = $.csv.toObjects(csvd);
-        var jsonobject = JSON.stringify(items);
-		alert(jsonobject);
+        items = $.csv.toObjects(csvd);
     },
     dataType: "text",
     complete: function () {
         // call a function on complete 
+		
+		// run through each objects and sort it out according to the decades
+		for (var i = 0; i < items.length; i++) {
+			var $li_link = $('<a href=""></a>');
+			
+			if (items[i].permalink.indexOf("factiva") >= 0) {
+				$li_link.addClass("news-headline-iframe");
+			} else {
+				$li_link.addClass("news-headline-popup");
+			}
+			
+			$li_link.attr("href", items[i].permalink);
+			$li_link.text(items[i].headline);
+			
+			if (items[i].decade == "60" || items[i].decade == "70") {
+				$("#news-60s").append(
+					$('<li/>').append($li_link)
+					);
+			} else if (items[i].decade == "80") {
+				$("#news-80s").append(
+					$('<li/>').append($li_link)
+					);
+			} else if (items[i].decade == "90") {
+				$("#news-90s").append(
+					$('<li/>').append($li_link)
+					);
+			} else if (items[i].decade == "100") {
+				$("#news-100s").append(
+					$('<li/>').append($li_link)
+					);
+			} else if (items[i].decade == "110") {
+				$("#news-110s").append(
+					$('<li/>').append($li_link)
+					);
+			}
+		}
+		
+		// bind the functions and such
+		//news iframe stuff
+		$(".news-headline-iframe").click(function(event) {
+			event.preventDefault();
+			
+			// grab the link from href
+			iframe_link = $(this).attr("href");
+			
+			//update iframe
+			$("#news-iframe").attr("src", iframe_link);
+		});
+
+		// news popup window stuff
+		$(".news-headline-popup").click(function(event) {
+			event.preventDefault();
+			
+			//open link in new window
+			var NWin = window.open($(this).attr('href'), '', 'height=800,width=800');
+			if (window.focus){
+				NWin.focus();
+			}
+		});
+		
     }
 });
+
+
+
