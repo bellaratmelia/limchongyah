@@ -60,6 +60,7 @@ ul.main_menu li a.home {
 
 .main {
 	background-image: url("../img/bg/bg-main.png");
+	height: 100vh;
 }
 
 .academic {
